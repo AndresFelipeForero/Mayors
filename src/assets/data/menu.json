@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Home",
+        "redirect": "/home",
+        "active": false
+    },
+    {
+        "name": "Candidatos anteriores",
+        "redirect": "/past-mayors",
+        "active": false
+    },
+    {
+        "name": "Candidatos actuales",
+        "redirect": "/current-mayors",
+        "active": false
+    }
+]
