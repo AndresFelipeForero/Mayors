@@ -15,6 +15,7 @@
 }
 
 .nav__toggle {
+    cursor: pointer;
     display: block;
     background-image: url("/assets/images/navbar/icon-menu.svg");
     height: 17px;
@@ -23,11 +24,15 @@
     transition: all .4s;
 }
 
-.nav__toggle--active {        
+.nav__toggle--active {
     background-image: url("/assets/images/navbar/icon-menu-close.svg");
     height: 31px;
     width: 32px;
     z-index: 10;
+}
+
+.nav__login--desk {
+    display: none;
 }
 
 .nav__ul {
@@ -47,32 +52,65 @@
     font-weight: 500;
     transition: all .4s;
 
-    .nav__li {
-            color: $dark-grayish-blue;
-            position: relative;
-    
-    
-            &.active {
-                color: $very-dark-blue;
-            }
-    
-            &::before {
-                content: "";
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 5px;
-                height: 0;
-                background-color: $soft-red;
-                transition: height 0.3s ease;
-                z-index: -1;
-            }
-    
-            &:hover::before,
-            &.active::before {
-                height: 100%;
-            }
+    .nav__login--mobile {
+        height: 2rem;
+        margin-right: 5vw;
+        margin-bottom: 1rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+
+        
+        .nav__login--icon {
+            color: $very-dark-blue;
+            scale: 3;
+            min-height: 2rem;
         }
+
+        .nav__login--span {
+            color: $very-dark-blue;
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 800;
+        }
+        
+    }
+    
+    .nav__spacer-line {
+        border-bottom: 1px solid $soft-red;
+        margin-right: 7vw;
+    }
+
+    .nav__li {
+        color: $dark-grayish-blue;
+        position: relative;
+
+
+        &.active {
+            color: $very-dark-blue;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 5px;
+            height: 0;
+            background-color: $soft-red;
+            transition: height 0.3s ease;
+            z-index: -1;
+        }
+
+        &:hover::before {
+            height: 100%;
+            background-color: $grayish-blue;
+        }
+
+        &.active::before {
+            height: 100%;
+        }
+    }
 }
 
 .nav__ul--active {
@@ -102,12 +140,16 @@
     .nav {
         display: flex;
         justify-content: space-between;
+
+        .nav__toggle {
+            display: none;
+        }
     }
 
     .nav__logo--mobile {
         width: 65px;
     }
-    
+
     .nav__ul {
         position: static;
         display: flex;
@@ -120,13 +162,15 @@
         right: auto;
         top: auto;
         width: auto;
+
+        .nav__login--mobile{
+            display: none;
+        }
     }
 
-    .nav__li {  
+    .nav__li {
 
-        padding: 5px 0;
-        
-        &::before{
+        &::before {
             display: none;
         }
 
@@ -135,18 +179,26 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 0; 
-            height: 5px;
+            width: 0;
+            height: 2px;
             transition: all 0.3s ease;
         }
 
         &:hover::after {
-            width: 100%; 
+            width: 100%;
             background-color: $grayish-blue;
         }
+
         &.active::after {
-            width: 100%; 
+            width: 100%;
             background-color: $soft-red;
+        }
+
+        .nav__a {
+            position: relative;
+            z-index: 1;
+            padding: 5px 0;
+            background-color: transparent;
         }
     }
 
@@ -154,3 +206,10 @@
         display: none;
     }
 }
+
+/* $soft-orange: hsl(35, 77%, 62%);
+  $soft-red: hsl(5, 85%, 63%);
+  $off-white: hsl(36, 100%, 99%);
+  $grayish-blue: hsl(233, 8%, 79%);
+  $dark-grayish-blue: hsl(236, 13%, 42%);
+  $very-dark-blue: hsl(240, 100%, 5%); */
