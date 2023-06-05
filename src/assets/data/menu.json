@@ -5,13 +5,13 @@
         "active": false
     },
     {
-        "name": "Candidatos anteriores",
-        "redirect": "/past-mayors",
+        "name": "Candidatos actuales",
+        "redirect": "/current-mayors",
         "active": false
     },
     {
-        "name": "Candidatos actuales",
-        "redirect": "/current-mayors",
+        "name": "Candidatos anteriores",
+        "redirect": "/past-mayors",
         "active": false
     }
 ]

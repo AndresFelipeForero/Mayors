@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.container{
+    padding: 20px;
+}
+
+.card {
+  background: radial-gradient(ellipse at 0 0, $off-white 10%, $off-white 70%, $soft-orange 90%);    
+    max-width: 100%;
+    color: $dark-grayish-blue;
+    box-shadow: -10px -5px 10px -10px $soft-red;
+
+}
+
+@media (min-width: 600px) {
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+    .card {
+      max-width: 400px;
+
+    }
+
+  }
+
+  
+  /* $soft-orange: hsl(35, 77%, 62%);
+  $soft-red: hsl(5, 85%, 63%);
+  $off-white: hsl(36, 100%, 99%);
+  $grayish-blue: hsl(233, 8%, 79%);
+  $dark-grayish-blue: hsl(236, 13%, 42%);
+  $very-dark-blue: hsl(240, 100%, 5%); */

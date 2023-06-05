@@ -14,6 +14,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { PastMayorsComponent } from './pages/past-mayors/past-mayors.component';
 import { CurrentMayorsComponent } from './pages/current-mayors/current-mayors.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CurrentCardComponent } from './components/current-card/current-card.component';
+import { PastCardComponent } from './components/past-card/past-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     PastMayorsComponent,
     CurrentMayorsComponent,
-    LoginComponent
+    LoginComponent,
+    CurrentCardComponent,
+    PastCardComponent
     
   ],
   imports: [
