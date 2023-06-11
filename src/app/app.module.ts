@@ -16,6 +16,9 @@ import { CurrentMayorsComponent } from './pages/current-mayors/current-mayors.co
 import { LoginComponent } from './pages/login/login.component';
 import { CurrentCardComponent } from './components/current-card/current-card.component';
 import { PastCardComponent } from './components/past-card/past-card.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { PastCardComponent } from './components/past-card/past-card.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
