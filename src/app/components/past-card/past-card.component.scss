@@ -5,10 +5,22 @@
 }
 
 .card {
-  background: radial-gradient(ellipse at 0 0, $off-white 10%, $off-white 70%, $soft-orange 90%);    
+  // background: radial-gradient(ellipse at 0 0, $off-white 10%, $off-white 70%, $very-dark-blue 90%); 
+  display: grid;
+  place-items: center;
+  background-color: $very-dark-blue;   
     max-width: 100%;
-    color: $dark-grayish-blue;
-    box-shadow: -10px -5px 10px -10px $soft-red;
+    color: $soft-orange;
+    // box-shadow: -10px -5px 10px -10px $soft-red;
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    p {
+      
+      color: $grayish-blue;
+    }
 
 }
 
