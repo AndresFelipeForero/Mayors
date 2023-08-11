@@ -1,0 +1,35 @@
+<mat-card-content class="container">
+    <form [formGroup]="form" class="form" (submit)="submitForm()">
+        <mat-form-field class="form__field" appearance="fill">
+            <mat-label class="form__label">Año:</mat-label>
+            <mat-select class="form__select" matNativeControl formControlName="ano">
+                <mat-option class="form__option" matInput *ngFor="let ano of anos" [value]="ano">
+                    {{ano}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="form__field" appearance="fill">
+            <mat-label class="form__label">Municipio:</mat-label>
+            <mat-select class="form__select"  formControlName="municipio">
+                <mat-option class="form__option" matInput *ngFor="let municipio of municipios" [value]="municipio">
+                    {{municipio}}
+                </mat-option>
+            </mat-select>
+            
+        </mat-form-field>
+     
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <button mat-button mat-raised-button color="accent" class="form__button" type="submit">Buscar</button>
+        
+        <div *ngFor="let mayor of data">
+            <h1>{{mayor.municipio}}</h1>
+            <h1>{{mayor.nombres}}</h1>
+            <h1>{{mayor.primer_apellido}}</h1>
+            <h1>{{mayor.segundo_apellido}}</h1>
+        </div>
+    </form>
+</mat-card-content>

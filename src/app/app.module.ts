@@ -19,6 +19,7 @@ import { PastCardComponent } from './components/past-card/past-card.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FormPastMayorsComponent } from './components/form-past-mayors/form-past-mayors.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     CurrentMayorsComponent,
     LoginComponent,
     CurrentCardComponent,
-    PastCardComponent
+    PastCardComponent,
+    FormPastMayorsComponent
     
   ],
   imports: [

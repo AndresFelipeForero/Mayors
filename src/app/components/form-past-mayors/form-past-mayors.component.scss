@@ -1,0 +1,12 @@
+.container {
+
+    display: grid;
+    place-items: center;
+    
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        width: 80%;
+    }
+}

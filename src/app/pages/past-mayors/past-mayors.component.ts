@@ -10,8 +10,10 @@ import { csv } from 'd3';
 })
 export class PastMayorsComponent implements OnInit {
   cardData?: PastMayors[];
-  collection: string = '2007';
+  collection: string = '2019';
   dataUp?: PastMayors[];
+  anos:string[] = ['1988','1990','1992', '1994', '1997', '2000','2003','2007', '2011', '2015', '2019']
+  municipios = ["necocli", "san juan de uraba", "arboletes", "carepa", "turbo", "apartado", "chigorodo"];
 
   constructor(private _pastMayorService: PastMayorsService) {}
 
@@ -19,27 +21,29 @@ export class PastMayorsComponent implements OnInit {
     this.convertirDatos();
   }
 
-  async pruebaCarga() {
-    console.log("enviando");
-    if (this.dataUp === undefined) {
-      console.log("Error al traer los archivos '.csv'");
-      return;
-    }
-    this.dataUp.forEach(async (mayor) => {
-      try {
-        await this._pastMayorService.addPastMayor(mayor, this.collection);
-      } catch (error) {
-        console.log('Error al crear el documento');
-      }
-    });
-  }
+  // async pruebaCarga() {
+  //   console.log('enviando');
+  //   if (this.dataUp === undefined) {
+  //     console.log("Error al traer los archivos '.csv'");
+  //     return;
+  //   }
+  //   this.dataUp.forEach(async (mayor) => {
+  //     try {
+  //       await this._pastMayorService.addPastMayor(mayor, this.collection);
+  //     } catch (error) {
+  //       console.log('Error al crear el documento');
+  //     }
+  //   });
+  // }
 
   async convertirDatos() {
     try {
       const data: any[] = await csv(
         `../../../assets/data/past-mayors-data/${this.collection}_alcaldia.dta.csv`
       );
-      this.dataUp = data;
+      this.dataUp = data.filter((mayor) => {
+        return this.municipios.includes(mayor.municipio.toLowerCase());
+      });
       console.log(this.dataUp);
     } catch (error) {
       console.log(error);
