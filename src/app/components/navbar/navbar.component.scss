@@ -8,6 +8,10 @@
     align-items: center;
     height: 10vh;
     padding: 0 2vw;
+    position:  fixed;
+    z-index: 7;
+    top: 90vh;
+    width: 100%;
 }
 
 .nav__logo--mobile {
@@ -139,6 +143,7 @@
 @media screen and (min-width: 819px) {
 
     .nav {
+        position: static;
         display: flex;
         justify-content: space-between;
 

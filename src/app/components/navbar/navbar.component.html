@@ -21,6 +21,7 @@
       [ngClass]="{'active': item.active }"><a class="nav__a" [routerLink]="item.redirect">{{item.name}}</a></li>
   </ul>
 
+
   <button class="nav__toggle" (click)="toggleNav()" [ngClass]="{'nav__toggle--active': isNavActive}"></button>
 
   <div class="nav__login--desk">
