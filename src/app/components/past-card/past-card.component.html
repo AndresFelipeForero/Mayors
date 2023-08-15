@@ -1,18 +1,12 @@
-<div class="container">
-    <mat-card class="card">
+<div [ngClass]="{'container__active': formSubmitted}"  class="container">
+    <mat-card *ngFor="let mayor of dataFromForm" class="card" >
         <mat-card-header class="header">
 
-            <mat-card-title>alsdmlcamsdca</mat-card-title>
-            <p>alsdmcalsdmcaksdl1</p>
-            <p>alsdmcalsdmcaksdl2</p>
-            <p>alsdmcalsdmcaksdl3</p>
-            <p>alsdmcalsdmcaksdl4</p>
-            <p>alsdmcalsdmcaksdl5</p>
-            <p>alsdmcalsdmcaksdl6</p>
-            <p>alsdmcalsdmcaksdl7</p>
-            <p>alsdmcalsdmcaksdl8</p>
-            <p>alsdmcalsdmcaksdl9</p>
-            <p>alsdmcalsdmcaksdl10</p>
+            <mat-card-title > {{mayor.nombres}} {{mayor.primer_apellido}} {{mayor.segundo_apellido
+            }}</mat-card-title>
+            <h2>Votos: {{mayor.votos}}</h2>
+            <h2>Municipio: {{mayor.municipio}}</h2>
+            
         </mat-card-header>
         <mat-card-content></mat-card-content>
     </mat-card>

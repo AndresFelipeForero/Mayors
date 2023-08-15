@@ -1,4 +1,4 @@
-<app-form-past-mayors [anos]="anos" [municipios]="municipios" ></app-form-past-mayors>
-<app-past-card></app-past-card>
+    <app-form-past-mayors (formDataEvent)="receiveFormData($event)" [anos]="anos" [municipios]="municipios" ></app-form-past-mayors>
+    <app-past-card [formSubmitted]="formSubmitted" [dataFromForm]="dataFromForm"></app-past-card>
 
 <!-- <button (click)="pruebaCarga()">enviar</button> -->

@@ -1,8 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PastMayorsService } from 'src/app/services/mayors/past-mayors.service';
-import { Observable } from 'rxjs';
-import { PastMayors } from 'src/app/models/past-mayor';
+import { FormData } from 'src/app/models/past-mayor';
 
 @Component({
   selector: 'app-form-past-mayors',
@@ -13,7 +12,7 @@ export class FormPastMayorsComponent {
   @Input() municipios?: string[];
   @Input() anos?: string[];
   form: FormGroup;
-  data?: PastMayors[];
+  @Output() formDataEvent = new EventEmitter<FormData>();
 
   constructor(private fb: FormBuilder, private _getData: PastMayorsService) {
     this.form = this.fb.group({
@@ -25,8 +24,8 @@ export class FormPastMayorsComponent {
 
   submitForm(){    
       this._getData.getMayor(this.form.value.ano).subscribe((response)=>{
-      this.data = response
-      console.log(this.data)
+      const formData = response
+      this.formDataEvent.emit({ data: formData, formSubmitted: true });
     })
   }
 }

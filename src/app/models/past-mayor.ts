@@ -1,4 +1,4 @@
-export interface PastMayors {
+export interface PastMayor {
   ano: number;
   censoe_hombres: number;
   censoe_mujeres: number;
@@ -18,4 +18,9 @@ export interface PastMayors {
   segundo_apellido: string;
   tipo_eleccion: string;
   votos: number;
+}
+
+export interface FormData {
+  data: PastMayor[];
+  formSubmitted: boolean;
 }

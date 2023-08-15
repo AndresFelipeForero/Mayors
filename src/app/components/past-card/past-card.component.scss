@@ -1,42 +1,56 @@
 @import '../../styles/variables.scss';
 
-.container{
-    padding: 20px;
+.container {
+  display: none;
+}
+
+.container__active {
+  display: block;
+  position: fixed;
+  padding: 20px;
+  height: 100vh;
+  top: 0;
+  z-index: 8;
+  background-color:rgba($dark-grayish-blue, 0.5) ;
+  overflow-y: auto;
 }
 
 .card {
+  height: max-content;
   // background: radial-gradient(ellipse at 0 0, $off-white 10%, $off-white 70%, $very-dark-blue 90%); 
   display: grid;
   place-items: center;
-  background-color: $very-dark-blue;   
-    max-width: 100%;
-    color: $soft-orange;
-    // box-shadow: -10px -5px 10px -10px $soft-red;
-    .header {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    p {
-      
-      color: $grayish-blue;
-    }
+  background-color: $very-dark-blue;
+  max-width: 100%;
+  color: $soft-orange;
+
+  // box-shadow: -10px -5px 10px -10px $soft-red;
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  p {
+
+    color: $grayish-blue;
+  }
 
 }
 
 @media (min-width: 600px) {
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    .card {
-      max-width: 400px;
-
-    }
+  .card {
+    max-width: 400px;
 
   }
+
+}
 
   
   /* $soft-orange: hsl(35, 77%, 62%);

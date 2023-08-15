@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PastMayors } from 'src/app/models/past-mayor';
+import { PastMayor, FormData } from 'src/app/models/past-mayor';
 import { PastMayorsService } from 'src/app/services/mayors/past-mayors.service';
 import { csv } from 'd3';
 
@@ -9,11 +9,13 @@ import { csv } from 'd3';
   styleUrls: ['./past-mayors.component.scss'],
 })
 export class PastMayorsComponent implements OnInit {
-  cardData?: PastMayors[];
+  cardData?: PastMayor[];
   collection: string = '2019';
-  dataUp?: PastMayors[];
+  dataUp?: PastMayor[];
   anos:string[] = ['1988','1990','1992', '1994', '1997', '2000','2003','2007', '2011', '2015', '2019']
   municipios = ["necocli", "san juan de uraba", "arboletes", "carepa", "turbo", "apartado", "chigorodo"];
+  dataFromForm?: PastMayor[];
+  formSubmitted?: Boolean;
 
   constructor(private _pastMayorService: PastMayorsService) {}
 
@@ -48,5 +50,11 @@ export class PastMayorsComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+
+  receiveFormData(eventData: FormData) { // Utiliza la interfaz FormData
+    this.dataFromForm = eventData.data;
+    this.formSubmitted = eventData.formSubmitted;
   }
 }
